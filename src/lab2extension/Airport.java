@@ -1,9 +1,10 @@
 package lab2extension;
 
 public class Airport {
-	static MoneyExchange me = new MoneyExchange();
 	
 	public static void main(String[] args) {
+		MoneyExchange me = new MoneyExchange();
+		
 		var exchangeCurrency = me.getExchangeCurrency("Enter the amount of GBP that you want to exchange: ");
 		var currency = me.getCurrencyType("What currency would you like to exchange to (1= USD, 2= EUR, 3= JPY): ");		
 		var customerType = me.getCustomerType("What type of customer are you(R = Regular, V = VIP, S = Staff): ");
