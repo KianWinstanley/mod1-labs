@@ -3,3 +3,6 @@
 /Airport.class
 /Utils.class
 /MoneyExchange.class
+/Customer.class
+/Currency.class
+/ExchangeTransaction.class

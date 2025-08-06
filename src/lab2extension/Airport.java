@@ -6,13 +6,13 @@ public class Airport {
 		MoneyExchange me = new MoneyExchange();
 		
 		var exchangeCurrency = me.getExchangeCurrency("Enter the amount of GBP that you want to exchange: ");
-		var currency = me.getCurrencyType("What currency would you like to exchange to (1= USD, 2= EUR, 3= JPY): ");		
+		var currencyOne = me.getCurrencyType("What currency would you like to exchange to (1= USD, 2= EUR, 3= JPY): ");		
 		var customerType = me.getCustomerType("What type of customer are you(R = Regular, V = VIP, S = Staff): ");
 		
 		System.out.println("Calculating exchange now");
 		me.closeScanner();	
 		
-		exchangeCurrency = calculateExchangeRate(exchangeCurrency, currency);
+		exchangeCurrency = calculateExchangeRate(exchangeCurrency, currencyOne);
 		
 		exchangeCurrency = calculateServiceFee(exchangeCurrency);		
 		System.out.println("The amount after the service fee is: " + exchangeCurrency);
@@ -22,6 +22,12 @@ public class Airport {
 		
 		var result = String.format("Your final amount is %,d" , (int)exchangeCurrency);
 		System.out.println(result);
+		
+		Customer customer = new Customer("Steve", 32, true);
+		Currency currency = new Currency("USD", 0.75);
+		ExchangeTransaction et = new ExchangeTransaction(customer, currency, 200.00);
+		et.processTransaction();
+		
 	}
 
 	private static double calculateTax(double exchangeCurrency, String customerType) {
