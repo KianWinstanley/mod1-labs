@@ -8,12 +8,12 @@ import javax.swing.*;
 
  
 public class Game extends Canvas {
-	Shape[] shapes = new Shape[3];
+	ArrayList<Shape> shapes = new ArrayList<>();
 	
 	Game() {
-		shapes[0] = new Shape(12, 11, 50, 50, 5, 5, ShapeType.THREEDRECTANGLE, Color.blue);
-		shapes[1] = new Shape(15, 20, 80, 80, 20, 10, ShapeType.ARC, Color.red);
-		shapes[2] = new Shape(40, 100, 30, 30, 15, 5, ShapeType.ROUNDRECTANGLE, Color.pink);
+		shapes.add(new Shape(12, 11, 50, 50, 5, 5, ShapeType.THREEDRECTANGLE, Color.blue));
+		shapes.add(new Shape(15, 20, 80, 80, 20, 10, ShapeType.ARC, Color.red));
+		shapes.add(new Shape(40, 100, 30, 30, 15, 5, ShapeType.ROUNDRECTANGLE, Color.pink));
 		
 		JFrame frame = new JFrame();
 		this.setSize(400, 400);
