@@ -12,8 +12,9 @@ public class Program {
 		System.out.println(name.toUpperCase().charAt(2));
 		
 		for (char character : name.toCharArray()) {
-			System.out.printf(character + "|");
+			System.out.printf(character + "\t");
 		}
+		System.out.println();
 		
 		System.out.println("Does name start with K: " + name.startsWith("K"));
 		System.out.println("Does name end with X: " + name.endsWith("X"));
