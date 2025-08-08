@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Program {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		Vehicle[] vehicles = new Vehicle[11];
 		
 		try {
@@ -19,9 +19,10 @@ public class Program {
 			vehicles[8] = new Vehicle(0, 9, "George");
 			vehicles[9] = new Vehicle(0, 10, "Lewis");
 			vehicles[10] = new Vehicle(0, 11, "Gerald");
+			vehicles[11] = new Vehicle(0, 12, "a");
 		}
-		catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("No more registration plates");
+		catch (Exception e) {
+			System.out.println("Cannot create more vehicles");
 		}
 		
 		for (Vehicle vehicle : vehicles) {
