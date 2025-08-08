@@ -7,10 +7,9 @@ import java.util.ArrayList;
 public class Program {
 
 	public static void main(String[] args) {
-		Point point = new Point();
-		Rectangle r = new Rectangle(Color.blue, point, 5, 10);
-		Circle c = new Circle(Color.red, point, 6.5);
-		Sphere s = new Sphere(Color.pink, point, 8.6);
+		Rectangle r = new Rectangle(Color.blue, new Point(6, 7), 5, 10);
+		Circle c = new Circle(Color.red, new Point(5, 4), 6.5);
+		Sphere s = new Sphere(Color.pink, new Point(3, 6), 8.6);
 		
 		System.out.println(r.getCharacteristics());
 		c.printCharacteristics();
