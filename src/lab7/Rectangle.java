@@ -18,7 +18,7 @@ public class Rectangle extends Shape{
 	}
 	
 	public String getCharacteristics() {
-		String format = String.format("This rectangle has 2 measurements, sideA: %d and sideB: %d", this.sideA, this.sideB);
+		String format = String.format("This rectangle has 2 measurements, sideA: %d and sideB: %d. It has a circumference of %d and an area of %d", this.sideA, this.sideB, this.getCircumference(), this.getArea());
 		return format;
 	}
 	
