@@ -6,12 +6,17 @@ public class Vehicle {
 	static int count = 0;
 	String driver;
 	
-	public Vehicle(int speed, int lane, String driver) {
+	public Vehicle(int speed, int lane, String driver) throws Exception {
 		this.speed = speed;
 		this.lane = lane;
 		this.driver = driver;
 		this.registrationPlate = RegistrationPlateFactory.getNextRegistrationPlate();
+		if (this.registrationPlate == null) {
+			throw new Exception("No more registration plates");
+		}
+		
 		count++;
+		
 	}
 	
 	public void accelerate(int amount) {

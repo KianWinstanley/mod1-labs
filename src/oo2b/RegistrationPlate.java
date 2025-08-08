@@ -8,6 +8,13 @@ public class RegistrationPlate {
 	}
 	
 	public String getNumber() {
+		try {
+			return this.number;
+		}
+		catch (NullPointerException e) {
+			System.out.println("Number does not exist");
+		}
+		
 		return this.number;
 	}
 }

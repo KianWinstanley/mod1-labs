@@ -17,6 +17,12 @@ public class RegistrationPlateFactory {
 	static int count = 0;
 	
 	public static RegistrationPlate getNextRegistrationPlate() {
-		return new RegistrationPlate(registrationPlates[count++]);
+		if (count < registrationPlates.length){
+			return new RegistrationPlate(registrationPlates[count++]);
+		}
+		else {
+			System.out.println("No more registration plates");
+			return null;
+		}
 	}
 }
