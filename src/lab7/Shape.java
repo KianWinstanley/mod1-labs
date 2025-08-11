@@ -3,7 +3,7 @@ package lab7;
 import java.awt.Color;
 import java.awt.Point;
 
-public class Shape {
+public abstract class Shape {
 	public Color colour;
 	public Point position;
 	
