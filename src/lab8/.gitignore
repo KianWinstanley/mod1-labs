@@ -4,3 +4,8 @@
 /Employee.class
 /Manager.class
 /SkilledWorker.class
+/PaymentMethod.class
+/CreditCardPayment.class
+/PayPalPayment.class
+/CryptoPayment.class
+/PaymentProcessor.class

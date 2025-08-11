@@ -41,6 +41,17 @@ public class Program {
 		manager1.addEmployee(sWorker2);
 		
 		System.out.println(manager1.getInfo());
+		
+		ArrayList<PaymentMethod> payments = new ArrayList<>();
+		CreditCardPayment credit = new CreditCardPayment("Steve", 65788291, 100.00);
+		PayPalPayment paypal = new PayPalPayment("John", "john@hotmai.com", 50.00);
+		CryptoPayment crypto = new CryptoPayment("Bob", "Bit", 1.15, 30.00);
+		payments.add(credit);
+		payments.add(paypal);
+		payments.add(crypto);
+		
+		PaymentProcessor process = new PaymentProcessor(payments);
+		process.process(30.00);
 	}
 	
 	public static void processCars(ArrayList<Car> cars) {
