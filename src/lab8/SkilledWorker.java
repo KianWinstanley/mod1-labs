@@ -17,6 +17,7 @@ public class SkilledWorker extends Employee{
 		return this.skills;
 	}
 	
+	@Override
 	public String getInfo() {
 		String info = super.getInfo();
 		info += getSkills() + "\n";

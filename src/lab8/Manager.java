@@ -17,6 +17,7 @@ public class Manager extends Employee {
 		return this.employees;
 	}
 	
+	@Override
 	public String getInfo() {
 		String info = super.getInfo();
 		for (Employee emp : employees) {
