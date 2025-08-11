@@ -35,6 +35,11 @@ public class Program {
 		sWorker.addSkill("Programming");
 		manager1.addEmployee(sWorker);
 		
+		SkilledWorker sWorker2 = new SkilledWorker("Kian", "Skilled Worker");
+		sWorker2.addSkill("Team building");
+		sWorker2.addSkill("Public speaking");
+		manager1.addEmployee(sWorker2);
+		
 		System.out.println(manager1.getInfo());
 	}
 	

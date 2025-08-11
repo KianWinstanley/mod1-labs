@@ -19,7 +19,7 @@ public class SkilledWorker extends Employee{
 	
 	public String getInfo() {
 		String info = super.getInfo();
-		info += getSkills();
+		info += getSkills() + "\n";
 		
 		return info;
 	}
