@@ -30,6 +30,7 @@ public class Program {
 		course2.addStudent(student1, 105);
 		
 		course1.removeStudent(student3);
+		course2.removeStudent(student1);
 		course1.printStudentList();
 	}
 
