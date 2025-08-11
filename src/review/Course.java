@@ -40,7 +40,7 @@ public class Course {
 	public void printStudentList() {
 		for (Student s : grades.keySet()) {
 			s.getDetails();
-			System.out.printf(String.format(" Grade: %d \n", grades.get(s)));
+			System.out.printf(String.format(" \tGrade: %d \n", grades.get(s)));
 		}
 	}
 }

@@ -10,7 +10,7 @@ public class Student extends Person{
 	
 	public void getDetails() {
 		super.getDetails();
-		System.out.printf(String.format(" StudentID: %s", studentId));
+		System.out.printf(String.format(" \tStudentID: %s", studentId));
 	}
 	
 }

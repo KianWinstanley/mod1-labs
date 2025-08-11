@@ -10,6 +10,6 @@ public class Person {
 		}
 	
 	public void getDetails() {
-		System.out.printf(String.format("Name: %s Email: %s", this.name, this.email));
+		System.out.printf(String.format("Name: %s \tEmail: %s", this.name, this.email));
 	}
 }
