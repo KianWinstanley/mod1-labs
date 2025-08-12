@@ -23,11 +23,20 @@ public class Program {
 			if (animal instanceof Bird) {
 				 ((Bird) animal).makeNest();
 			}
-			else if (animal instanceof Fish) {
-				((Fish) animal).Swim();
-			}
 			else if (animal instanceof Amphibian) {
 				((Amphibian) animal).Speak();
+			}
+			
+			if (animal instanceof Flyable) {
+				((Flyable) animal).fly();
+			}
+			
+			if (animal instanceof Swimmable) {
+				((Swimmable) animal).swim();
+			}
+			
+			if (animal instanceof Movable) {
+				animal.move();
 			}
 		}
 	}

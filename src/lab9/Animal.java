@@ -1,6 +1,6 @@
 package lab9;
 
-public abstract class Animal {
+public abstract class Animal implements Movable{
 	AnimalType animalType;
 	String name;
 	
@@ -10,5 +10,9 @@ public abstract class Animal {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public void move() {
+		System.out.println("Moving like an animal");
 	}
 }
