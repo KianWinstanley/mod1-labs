@@ -1,6 +1,6 @@
 package lab6;
 
-public class Account {
+public class Account implements Comparable<Account>{
 	private int id;
 	private String owner;
 	private double balance;
@@ -40,5 +40,10 @@ public class Account {
 	
 	public void AddInterest() {
 		this.balance *= 1.025;
+	}
+
+	@Override
+	public int compareTo(Account other) {
+		return this.owner.compareTo(other.owner);
 	}
 }

@@ -1,5 +1,8 @@
 package lab6;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -41,6 +44,16 @@ public class Program {
 		System.out.println(accountFound.getDetails());
 		var accountNotFound = bank.getAccount("Brian");
 		System.out.println(accountNotFound);
+		
+		ArrayList<Account> accountsList = new ArrayList<>();
+		accountsList.add(new Account(100, "Zeke", 1000));
+		accountsList.add(new Account(500, "Linda", 3000));
+		accountsList.add(new Account(300, "David", 2000));
+		Collections.sort(accountsList);
+		
+		for (Account account : accountsList) {
+			System.out.println(account.getDetails());
+		}
 	}
 	
 	private static void incInt(int x) {
