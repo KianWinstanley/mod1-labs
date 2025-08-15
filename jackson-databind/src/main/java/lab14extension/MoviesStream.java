@@ -42,7 +42,7 @@ public class MoviesStream {
 		System.out.println(movies.stream().filter(movie -> movie.getRating() > 8.0).count());
 		
 		System.out.println("Titles in alphabetical order: ");
-		String alphabetical = movies.stream().map(Movie::getTitle).sorted().collect(Collectors.joining(","));
+		String alphabetical = movies.stream().sorted().collect(Collectors.joining(","));
 		System.out.println(alphabetical);
 		
 		System.out.println("Movie statistics by release year");
