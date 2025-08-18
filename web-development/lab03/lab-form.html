@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+    <link href="lab-style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="join-page">
+        <h1>Join the Tech Explorers Club</h1>
+    </div>
+    <form method="post" action="http://localhost:5000">
+        <div>
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <span class="absolute-label">Name:</span><br>
+                <input type="text" id="name" name="name" maxlength="15" placeholder="type name" required/><br>
+
+                <span>Email:</span><br>
+                <input type="text" id="email" name="email" maxlength="50" placeholder="type email" required /><br>
+
+                <span>Age:</span><br>
+                <span class="inline">Years</span><br>
+                <input type="number" id="age" name="age" min="1" max="100" placeholder="type age" required />
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Preferences</legend>
+
+                <span>User Type:</span><br>
+                <input type="radio" id="admin" name="admin" class="user-type">
+                <label for="admin">Admin</label>
+                <input type="radio" id="standard" name="standard" class="user-type">
+                <label for="standard">Standard</label>
+                <input type="radio" id="guest" name="guest" class="user-type">
+                <label for="guest">Guest</label><br>
+                <br>
+
+                <span>Interests:</span><br>
+                <input type="checkbox" id="programming" name="programming" class="interests">
+                <label for="programming">Programming</label>
+                <input type="checkbox" id="gaming" name="gaming" class="interests">
+                <label for="gaming">Gaming</label>
+                <input type="checkbox" id="ai" name="ai" class="interests">
+                <label for="ai">AI</label><br>
+                <br>
+
+                <span>Favourite Language:</span>
+                <select class="languages" id="language" name="language">
+                    <option>Python</option>
+                    <option>C#</option>
+                    <option>Java</option>
+                    <option>JavaScript</option>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                </select>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Bio</legend>
+
+                <textarea rows="5" cols="50" class="bio" id="bio" name="bio">
+
+                </textarea>
+            </fieldset>
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
