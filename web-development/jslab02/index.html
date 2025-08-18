@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button onclick="checkLogin()">Login</button>
+
+    <p id="message"></p>
+
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var isNumber = false;
+
+            for (let char of password) {
+                if (/\d/.test(password)) {
+                    isNumber = true;
+                }
+            }
+
+            if (username.length < 2) {
+                alert('ERROR, USERNAME WRONG!');
+            }
+            else if (password.length < 8) {
+                alert('ERROR, PASSWORD WRONG!');
+            }
+            else if (isNumber == false) {
+                alert('ERROR, PASSWORD MUST HAVE NUMBER');
+            }
+            else {
+                alert('Correct login');
+            }
+        }
+    </script>
+</body>
+</html>
