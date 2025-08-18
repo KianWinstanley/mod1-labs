@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <label for="table">Multiplication table:</label>
+    <input type="number" id="table"><br><br>
+
+    <button onclick="multiply()">Click Me</button>
+
+    <script >
+        switch (new Date().getDay()) {
+            case 0:
+                alert('Sunday');
+                break;
+            case 1:
+                alert('Monday');
+                break;
+            case 2:
+                alert('Tuesday');
+                break;
+            case 3:
+                alert('Wednesday');
+                break;
+            case 4:
+                alert('Thursday');
+                break;
+            case 5:
+                alert('Friday');
+                break;
+            case 6:
+                alert('Saturday');
+            default:
+                alert("Couldn't find day");
+        }
+
+        var total = 0;
+        var i = 0;
+
+        while (i <= 100) {
+            total += i;
+            i++;
+        }
+        alert('total is: ' + total);
+
+        var total2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                console.log(i);
+                total2 += i;
+            }
+        }
+        alert('total of odd numbers is: ' + total2);
+
+        function multiply() {
+            var amountOfMultiplications = document.getElementById("table").value;
+            var table = "<div>";
+            table += "<table>";
+            for (var row = 1; row <= amountOfMultiplications; row++) {
+                table += "<tr>";
+
+                for (var column = 1; column <= amountOfMultiplications; column++) {
+                    var res = row * column;
+                    if (res < 10) {
+                        table += `<td>0${column*row}</td>`;
+                    }
+                    else {
+                        table += `<td>${column*row}</td>`;
+                    }
+                }
+
+                table += "</tr>";
+            }
+
+            table += "</table>";
+            table += "</div>";
+            document.write(table);
+        }
+    </script>
+</body>
+</html>
