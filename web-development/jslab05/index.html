@@ -35,7 +35,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="loadItems()">
     <h2>Task Manager</h2>
 
     <label for="taskInput">New Task:</label>
@@ -50,10 +50,20 @@
     <input type="text" id="taskToDelete" placeholder="Enter a task"><br>
     <button onclick="deleteTask()">Delete Task</button><br><br>
 
+    <button onclick="saveItems()">Save Tasks</button>
+
     <h3>Task List</h3>
     <ul id="taskList"></ul>
 
     <script>
+        var tasks = [];
+        class Task {
+            constructor(text, priority) {
+                this.text = text;
+                this.priority = priority;
+            }
+        }
+
         function addTask() {
             var task = document.getElementById("taskInput").value;
             var taskList = document.getElementById("taskList");
@@ -84,13 +94,15 @@
             const removeBtn = document.createElement("button");
             removeBtn.innerText = "Completed - Remove from List";
             removeBtn.onclick = () => {
-                li.remove();
-                this.remove();
+                taskList.removeChild(li);
+                tasks = tasks.filter(t => t.text !== task);
             };
 
             li.innerText += task;
             li.appendChild(removeBtn);
             taskList.appendChild(li);
+            var newItem = new Task(task, priority);
+            tasks.push(newItem);
         }
 
         function deleteTask() {
@@ -104,7 +116,45 @@
                     break;
                 }
             }
+
+            tasks = tasks.filter(t => t.text !== task);
         }
+
+        function saveItems() {
+            console.log(localStorage.setItem("taskItems", JSON.stringify(tasks)));
+            alert("Tasks saved!");
+        }
+
+        function loadItems() {
+            let items = localStorage.getItem("taskItems");
+            
+            if (!items) {
+                tasks = [];
+                return;
+            }
+
+            var parsed = JSON.parse(items);
+            tasks = parsed.map(t => new Task(t.text, t.priority));
+            
+            var taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+
+            for (let task of tasks) {
+                var li = document.createElement("li");
+                li.classList.add(`priority-${task.priority}`);
+                li.innerText = `Priority ${task.priority}: ${task.text}`;
+
+                const removeBtn = document.createElement("button");
+                removeBtn.innerText = "Completed - Remove from List";
+                removeBtn.onclick = () => {
+                    taskList.removeChild(li);
+                    tasks = tasks.filter(t => t.text !== task.text);
+                };
+                li.appendChild(removeBtn);
+                taskList.appendChild(li);
+            }
+        }
+
     </script>
 </body>
 </html>
