@@ -80,7 +80,16 @@
                 li.innerText = "Priority 5: ";
                 li.classList.add("priority-5");
             }
+
+            const removeBtn = document.createElement("button");
+            removeBtn.innerText = "Completed - Remove from List";
+            removeBtn.onclick = () => {
+                li.remove();
+                this.remove();
+            };
+
             li.innerText += task;
+            li.appendChild(removeBtn);
             taskList.appendChild(li);
         }
 
