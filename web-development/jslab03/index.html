@@ -12,10 +12,15 @@
     </style>
 </head>
 <body>
-    <label for="table">Multiplication table:</label>
-    <input type="number" id="table"><br><br>
+    <label for="rows">Multiplication table, input rows and columns:</label><br>
+    <input type="number" id="rows" name="rows"><br><br>
+    <input type="number" id="columns" name="columns"><br><br>
 
-    <button onclick="multiply()">Click Me</button>
+    <button onclick="multiplicationTable(document.getElementById('rows').value, document.getElementById('columns').value)">Display Table</button>
+    <pre id="table"></pre>
+
+    <button onclick="multiplicationString(document.getElementById('rows').value, document.getElementById('columns').value)">Display String</button>
+    <pre id="output"></pre>
 
     <script >
         switch (new Date().getDay()) {
@@ -61,14 +66,13 @@
         }
         alert('total of odd numbers is: ' + total2);
 
-        function multiply() {
-            var amountOfMultiplications = document.getElementById("table").value;
+        function multiplicationTable(maxRows, maxColumns) {
             var table = "<div>";
             table += "<table>";
-            for (var row = 1; row <= amountOfMultiplications; row++) {
+            for (var row = 1; row <= maxRows; row++) {
                 table += "<tr>";
 
-                for (var column = 1; column <= amountOfMultiplications; column++) {
+                for (var column = 1; column <= maxColumns; column++) {
                     var res = row * column;
                     if (res < 10) {
                         table += `<td>0${column*row}</td>`;
@@ -83,7 +87,24 @@
 
             table += "</table>";
             table += "</div>";
-            document.write(table);
+            document.getElementById("table").innerHTML = table;
+        }
+
+        function multiplicationString(maxRows, maxColumns) {
+            var string = "";
+            for (var row = 1; row <= maxRows; row++) {
+                for (var columns = 1; columns <= maxColumns; columns++) {
+                    var res = row * columns;
+                    if (res < 10) {
+                        string += "0" + res + ", ";
+                    }
+                    else {
+                        string += res + ", ";
+                    }
+                }
+            }
+            document.getElementById("output").textContent = string;
+            return string;
         }
     </script>
 </body>
